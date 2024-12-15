@@ -1,6 +1,7 @@
 package org.com.beer.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,17 +18,17 @@ public class Beers {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "breweryId")
+    @JoinColumn(name = "brewery_Id")
     @JsonBackReference
     private Brewery brewery;
 
     @ManyToOne
-    @JoinColumn(name = "catId")
+    @JoinColumn(name = "cat_Id")
     @JsonBackReference
     private Category category;
 
     @ManyToOne
-    @JoinColumn(name = "styleId")
+    @JoinColumn(name = "style_Id")
     @JsonBackReference
     private Style style;
 
